@@ -1,0 +1,105 @@
+package kintan.customrecylerviewadapter;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.SingleObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import kintan.customrecylerviewadapter.adapter.StudentAdapter;
+import kintan.customrecylerviewadapter.model.StudentBean;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class MainActivity extends AppCompatActivity {
+    private static Gson gson;
+    private StudentAdapter adapter;
+    private Retrofit retrofit;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        adapter = new StudentAdapter();
+        RecyclerView rvStudent = (RecyclerView) findViewById(R.id.rv_student);
+        rvStudent.setLayoutManager(new GridLayoutManager(this, 2));
+        rvStudent.setItemAnimator(new DefaultItemAnimator());
+        rvStudent.setAdapter(adapter);
+
+        /*ArrayList<StudentBean> arrayList = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            arrayList.add(new StudentBean("K" + i));
+        }
+        adapter.addAll(arrayList);*/
+
+        getData();
+
+
+    }
+
+    private void getData() {
+        getInstance().create(StatusService.class).getStatusCommandTest("latest/latest.json")
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<ArrayList<StudentBean>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(ArrayList<StudentBean> studentBeans) {
+                        Log.e("e", " " + studentBeans);
+                        adapter.addAll(studentBeans);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("e", "e");
+                    }
+                });
+    }
+
+    private Retrofit getInstance() {
+        //String BASE_URL = "http://103.249.120.62:2131";
+        String BASE_URL = "http://appdevbuild.com/json/";
+
+        if (retrofit == null) {
+            if (gson == null) {
+                gson = new GsonBuilder().setLenient().create();
+            }
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            httpClient.readTimeout(60, TimeUnit.MINUTES);
+            httpClient.connectTimeout(60, TimeUnit.SECONDS);
+
+            if (BuildConfig.DEBUG) {
+                HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+                logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+                httpClient.addInterceptor(logging);
+            }
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .client(httpClient.build())
+                    .build();
+
+        }
+        return retrofit;
+    }
+}
