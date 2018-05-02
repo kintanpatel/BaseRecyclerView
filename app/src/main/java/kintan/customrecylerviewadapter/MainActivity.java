@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -20,6 +23,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import kintan.customrecylerviewadapter.adapter.StudentAdapter;
 import kintan.customrecylerviewadapter.model.StudentBean;
+import kintan.customrecylerviewadapter.widget.BaseRecyclerViewAdapter;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -36,17 +40,38 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         adapter = new StudentAdapter();
         RecyclerView rvStudent = (RecyclerView) findViewById(R.id.rv_student);
+        EditText edSearch = findViewById(R.id.ed_search);
         rvStudent.setLayoutManager(new GridLayoutManager(this, 2));
         rvStudent.setItemAnimator(new DefaultItemAnimator());
         rvStudent.setAdapter(adapter);
 
-        /*ArrayList<StudentBean> arrayList = new ArrayList<>();
+      /*  ArrayList<StudentBean> arrayList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             arrayList.add(new StudentBean("K" + i));
         }
         adapter.addAll(arrayList);*/
 
+
+        adapter.setFilterConsumer((BaseRecyclerViewAdapter.FilterConsumer<StudentBean>) StudentBean::getStudentName);
+
         getData();
+
+        edSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<kintan.customrecylerviewadapter.widget.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     android:layout_margin="10dp"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher" />
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
@@ -22,4 +22,11 @@
         android:text="Apply"
         android:textAllCaps="false"
         android:textColor="#FFF" />
-</kintan.customrecylerviewadapter.widget.SquareLayout>
+
+    <TextView
+        
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

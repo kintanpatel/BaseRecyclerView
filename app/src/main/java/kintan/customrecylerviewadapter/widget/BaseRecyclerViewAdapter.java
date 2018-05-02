@@ -1,13 +1,14 @@
 package kintan.customrecylerviewadapter.widget;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
-import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,15 +25,16 @@ import java.util.List;
  */
 @SuppressWarnings("WeakerAccess")
 public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHolder>
-        extends RecyclerView.Adapter<VH> {
+        extends RecyclerView.Adapter<VH> implements Filterable {
 
     /**
      * Lock used to modify the content of {@link #mObjects}. Any write operation
      * performed on the array should be synchronized on this lock.
      */
     private final Object mLock = new Object();
-
-    private final List<T> mObjects = new ArrayList<>();
+    private List<FilterConsumer<T>> filterConsumer = new ArrayList<>();
+    private List<T> mObjects = new ArrayList<>();
+    private List<T> mCopyObjects = new ArrayList<>();//searching
 
     @SuppressWarnings("ConstantConditions")
     public BaseRecyclerViewAdapter(@NonNull final List<T> objects) {
@@ -42,14 +44,70 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
         for (final T item : objects) {
             requireNotNullItem(item);
             mObjects.add(item);
+            mCopyObjects.add(item);
         }
-    }
 
+    }
 
     public BaseRecyclerViewAdapter() {
 
     }
 
+    private static void requireNotNullItem(Object o) {
+        if (o == null) {
+            throw new IllegalStateException("null items are not allowed");
+        }
+    }
+
+
+    @SafeVarargs
+    public final void setFilterConsumer(FilterConsumer<T>... filterConsumer) {
+        this.filterConsumer.addAll(Arrays.asList(filterConsumer));
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                List<T> list = new ArrayList<>();
+
+                FilterResults results = new FilterResults();
+
+                if (charSequence.length() == 0) {
+                    list = new ArrayList<>(mCopyObjects);
+                } else {
+
+                    if (filterConsumer == null) {
+                        throw new IllegalArgumentException("You didn't provide filter criteria. Please use setFilterConsumer method. ");
+                    }
+
+                    outerLoop:
+                    for (T item : mCopyObjects) {
+                        for (FilterConsumer<T> tFilterConsumer : filterConsumer) {
+                            if (tFilterConsumer.apply(item).toLowerCase().contains(charSequence.toString().toLowerCase())) {
+                                list.add(item);
+                                continue outerLoop;
+                            }
+                        }
+                    }
+                }
+                results.count = list.size();
+                results.values = list;
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                setData((List<T>) filterResults.values);
+            }
+        };
+    }
+
+    private void setData(List<T> values) {
+        mObjects = values;
+        notifyDataSetChanged();
+    }
 
     /**
      * Adds the specified object at the end of the array.
@@ -80,10 +138,13 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
             for (final T item : collection) {
                 requireNotNullItem(item);
                 mObjects.add(item);
+                mCopyObjects.add(item);
             }
             notifyItemRangeInserted(position, length);
         }
+
     }
+
 
     /**
      * Adds the specified items at the end of the array.
@@ -101,9 +162,11 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
             for (final T item : items) {
                 requireNotNullItem(item);
                 mObjects.add(item);
+                mCopyObjects.add(item);
             }
             notifyItemRangeInserted(position, length);
         }
+
     }
 
     /**
@@ -116,8 +179,10 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
         synchronized (mLock) {
             final int size = getItemCount();
             mObjects.clear();
+            mCopyObjects.clear();
             notifyItemRangeRemoved(0, size);
         }
+
     }
 
     /**
@@ -141,7 +206,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
     /**
      * Return a stable id for an item. The item doesn't have to be part of the underlying data set.
-     *
+     * <p>
      * If you don't have an id field simply return the {@code item} itself
      *
      * @param item for which a stable id should be generated
@@ -315,7 +380,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
                 final DiffUtil.DiffResult result = DiffUtil.calculateDiff(new DiffUtil.Callback() {
                     @Override
                     public boolean areContentsTheSame(final int oldItemPosition,
-                            final int newItemPosition) {
+                                                      final int newItemPosition) {
                         final T oldItem = mObjects.get(oldItemPosition);
                         final T newItem = newObjects.get(newItemPosition);
                         return isContentTheSame(oldItem, newItem);
@@ -323,7 +388,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
                     @Override
                     public boolean areItemsTheSame(final int oldItemPosition,
-                            final int newItemPosition) {
+                                                   final int newItemPosition) {
                         final T oldItem = mObjects.get(oldItemPosition);
                         final T newItem = newObjects.get(newItemPosition);
                         return isItemTheSame(oldItem, newItem);
@@ -340,18 +405,18 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
                     }
                 });
                 mObjects.clear();
+                mCopyObjects.clear();
                 for (final T item : newObjects) {
                     requireNotNullItem(item);
                     mObjects.add(item);
+                    mCopyObjects.add(item);
                 }
                 result.dispatchUpdatesTo(this);
             }
         }
     }
 
-    private static void requireNotNullItem(Object o) {
-        if (o == null) {
-            throw new IllegalStateException("null items are not allowed");
-        }
+    public interface FilterConsumer<T> {
+        public String apply(T item);
     }
 }

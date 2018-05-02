@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
@@ -47,21 +48,25 @@ public class StudentAdapter extends BaseRecyclerViewAdapter<StudentBean, Student
         //Glide.with(mContext).load(getItem(position).getUrl()).into(holder.imageView);
         String filePath = "/storage/emulated/0/Pictures/example_video.mp4";
 
-        Glide.with(mContext)
+     /*   Glide.with(mContext)
                 .asBitmap()
                 .load(getItem(position).getUrl())
                 .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL))
-                .into(holder.imageView);
-
+                .into(holder.imageView);*/
+holder.title.setText(getItem(position).getStudentName());
 
     }
 
+
+
     static class VH extends RecyclerView.ViewHolder {
         private ImageView imageView;
+        private TextView title;
 
         public VH(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.image_view);
+            title = (TextView) itemView.findViewById(R.id.title);
         }
     }
 }

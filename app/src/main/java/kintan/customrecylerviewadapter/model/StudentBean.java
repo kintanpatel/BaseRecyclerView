@@ -11,15 +11,14 @@ public class StudentBean {
     private String title;
     @SerializedName("url")
     private String url;
-
-   private String studentName;
+       private String studentName;
 
     public StudentBean(String studentName) {
         this.studentName = studentName;
     }
 
     public String getStudentName() {
-        return studentName;
+        return title;
     }
 
     public void setStudentName(String studentName) {
@@ -41,4 +40,5 @@ public class StudentBean {
     public void setUrl(String url) {
         this.url = url;
     }
+
 }
