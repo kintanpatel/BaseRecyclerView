@@ -24,6 +24,7 @@ import io.reactivex.schedulers.Schedulers;
 import kintan.customrecylerviewadapter.adapter.StudentAdapter;
 import kintan.customrecylerviewadapter.model.StudentBean;
 import kintan.customrecylerviewadapter.widget.BaseRecyclerViewAdapter;
+import kintan.customrecylerviewadapter.widget.EmptyRecyclerView;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         adapter = new StudentAdapter();
-        RecyclerView rvStudent = (RecyclerView) findViewById(R.id.rv_student);
+        EmptyRecyclerView rvStudent = (EmptyRecyclerView) findViewById(R.id.rv_student);
         EditText edSearch = findViewById(R.id.ed_search);
         rvStudent.setLayoutManager(new GridLayoutManager(this, 2));
         rvStudent.setItemAnimator(new DefaultItemAnimator());
