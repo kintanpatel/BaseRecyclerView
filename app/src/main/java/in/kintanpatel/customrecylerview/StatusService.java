@@ -1,10 +1,9 @@
-package kintan.customrecylerviewadapter;
+package in.kintanpatel.customrecylerview;
 
 import java.util.ArrayList;
 
+import in.kintanpatel.customrecylerview.model.StudentBean;
 import io.reactivex.Single;
-import kintan.customrecylerviewadapter.model.StudentBean;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Url;
 

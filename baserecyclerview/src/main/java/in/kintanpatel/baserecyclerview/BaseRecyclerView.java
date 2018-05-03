@@ -1,4 +1,4 @@
-package kintan.customrecylerviewadapter.widget;
+package in.kintanpatel.baserecyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,14 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
-import kintan.customrecylerviewadapter.R;
-
 
 /**
  * Created by kintan on 27/4/18.
  */
 
-public class EmptyRecyclerView extends RecyclerView {
+public class BaseRecyclerView extends RecyclerView {
     public static int STATE_LOADING = 0;
     public static int STATE_DONE = 1;
     private int state = 0;
@@ -40,16 +38,16 @@ public class EmptyRecyclerView extends RecyclerView {
     };
     private int idView;
 
-    public EmptyRecyclerView(Context context) {
+    public BaseRecyclerView(Context context) {
         super(context);
     }
 
-    public EmptyRecyclerView(Context context, @Nullable AttributeSet attrs) {
+    public BaseRecyclerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(attrs);
     }
 
-    public EmptyRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public BaseRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs);
     }
@@ -63,9 +61,9 @@ public class EmptyRecyclerView extends RecyclerView {
             }
 
             if (getAdapter() == null || getAdapter().getItemCount() == 0) {
-                EmptyRecyclerView.this.setVisibility(GONE);
+                BaseRecyclerView.this.setVisibility(GONE);
             } else {
-                EmptyRecyclerView.this.setVisibility(VISIBLE);
+                BaseRecyclerView.this.setVisibility(VISIBLE);
             }
         }
     }
@@ -92,10 +90,10 @@ public class EmptyRecyclerView extends RecyclerView {
         if (attrs != null) {
             TypedArray a = getContext().getTheme().obtainStyledAttributes(
                     attrs,
-                    R.styleable.EmptyRecyclerView,
+                    R.styleable.BaseRecyclerView,
                     0, 0);
             try {//set empty view from xml
-                idView = a.getResourceId(R.styleable.EmptyRecyclerView_emptyViewId, 0);
+                idView = a.getResourceId(R.styleable.BaseRecyclerView_emptyViewId, 0);
             } finally {
                 a.recycle();
             }

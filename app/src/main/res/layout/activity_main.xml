@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kintan.customrecylerviewadapter.MainActivity">
+    tools:context="kintanpatel.customrecylerview.MainActivity">
 
     <EditText
         android:id="@+id/ed_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <kintan.customrecylerviewadapter.widget.EmptyRecyclerView
+    <in.kintanpatel.baserecyclerview.BaseRecyclerView
         android:id="@+id/rv_student"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
