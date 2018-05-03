@@ -4,7 +4,7 @@ android {
 
     compileSdkVersion 27
     defaultConfig {
-        applicationId "in.kintanpatel.customrecyclerview"
+        applicationId "in.kintanpatel.baserecyclerview"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
@@ -45,4 +45,14 @@ dependencies {
 
     //Add baserecyclerview project
     implementation project(path: ':baserecyclerview')
+
+    //CardView
+    implementation 'com.android.support:cardview-v7:27.1.1'
+
+    //Butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //color platte
+    implementation 'com.android.support:palette-v7:27.1.1'
 }

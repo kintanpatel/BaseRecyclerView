@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@android:color/white</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">@string/search_hint</item>
+
+    </style>
 </resources>

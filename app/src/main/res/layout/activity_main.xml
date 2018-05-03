@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="kintanpatel.customrecylerview.MainActivity">
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/ed_search"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        style="@style/SearchViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@android:color/white" />
 
     <in.kintanpatel.baserecyclerview.BaseRecyclerView
-        android:id="@+id/rv_student"
+        android:id="@+id/rv_picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/ed_search"
+        android:layout_below="@+id/tool_bar"
         app:emptyViewId="@id/empty_view" />
 
     <LinearLayout

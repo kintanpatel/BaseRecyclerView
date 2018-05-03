@@ -1,13 +1,15 @@
 package in.kintanpatel.customrecylerview;
 
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.EditText;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,10 +18,13 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import in.kintanpatel.baserecyclerview.BaseRecyclerView;
 import in.kintanpatel.baserecyclerview.BaseRecyclerViewAdapter;
-import in.kintanpatel.customrecylerview.adapter.StudentAdapter;
-import in.kintanpatel.customrecylerview.model.StudentBean;
+import in.kintanpatel.customrecylerview.adapter.PictureAdapter;
+import in.kintanpatel.customrecylerview.model.ImageDetail;
+import in.kintanpatel.customrecylerview.util.ApiUrls;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -30,65 +35,87 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+
     private static Gson gson;
-    private StudentAdapter adapter;
+    @BindView(R.id.rv_picture)
+    BaseRecyclerView rvPicture;
+    @BindView(R.id.tool_bar)
+    Toolbar toolbar;
+
+    private PictureAdapter adapter;
     private Retrofit retrofit;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        adapter = new StudentAdapter();
-        BaseRecyclerView rvStudent = findViewById(R.id.rv_student);
-        EditText edSearch = findViewById(R.id.ed_search);
-        rvStudent.setLayoutManager(new GridLayoutManager(this, 2));
-        rvStudent.setItemAnimator(new DefaultItemAnimator());
-        rvStudent.setAdapter(adapter);
+        ButterKnife.bind(this);
 
-      /*  ArrayList<StudentBean> arrayList = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
-            arrayList.add(new StudentBean("K" + i));
-        }
-        adapter.addAll(arrayList);*/
+        toolbar.setTitle(getString(R.string.app_name));
 
-        adapter.setFilterConsumer((BaseRecyclerViewAdapter.FilterConsumer<StudentBean>) StudentBean::getStudentName);
+        adapter = new PictureAdapter();
+        //EditText edSearch = findViewById(R.id.ed_search);
+        rvPicture.setLayoutManager(new GridLayoutManager(this, 2));
+        rvPicture.setItemAnimator(new DefaultItemAnimator());
+        rvPicture.setHasFixedSize(true);
+        rvPicture.setAdapter(adapter);
 
+        setSupportActionBar(toolbar);
+
+        adapter.setFilterConsumer((BaseRecyclerViewAdapter.FilterConsumer<ImageDetail>) (ImageDetail imageDetail) -> {
+            return imageDetail.getUser().getName();
+        });
         getData();
+    }
 
-        edSearch.addTextChangedListener(new TextWatcher() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            public boolean onQueryTextSubmit(String query) {
+                //Perform the final search
 
+                return false;
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                adapter.getFilter().filter(s);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
+            public boolean onQueryTextChange(String newText) {
+                //Text has changed, apply filtering?
+                adapter.getFilter().filter(newText);
+                return false;
             }
         });
 
 
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void getData() {
-        getInstance().create(StatusService.class).getStatusCommandTest("latest/latest.json")
+        getInstance().create(StatusService.class).getAllImages(ApiUrls.API_KEY, 30)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<ArrayList<StudentBean>>() {
+                .subscribe(new SingleObserver<ArrayList<ImageDetail>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onSuccess(ArrayList<StudentBean> studentBeans) {
-                        Log.e("e", " " + studentBeans);
-                        adapter.addAll(studentBeans);
+                    public void onSuccess(ArrayList<ImageDetail> imageDetails) {
+                        Log.e("e", " " + imageDetails);
+                        adapter.addAll(imageDetails);
                     }
 
                     @Override
@@ -100,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Retrofit getInstance() {
         //String BASE_URL = "http://103.249.120.62:2131";
-        String BASE_URL = "http://appdevbuild.com/json/";
+        String BASE_URL = ApiUrls.PICTURE_BASE_URL;
 
         if (retrofit == null) {
             if (gson == null) {

@@ -191,7 +191,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
      * @param position index of the item to return
      * @return the item at the specified position or {@code null} when not found
      */
-    @Nullable
+    //@Nullable
     public T getItem(final int position) {
         if (position < 0 || position >= mObjects.size()) {
             return null;
