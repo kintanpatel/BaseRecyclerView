@@ -21,7 +21,7 @@ import java.util.List;
  * @param <T>  item type (a immutable pojo works best)
  * @param <VH> {@link RecyclerView.ViewHolder} for item {@link T}
  * @author Pascal Welsch on 04.07.14.
- *         Major update 09.05.17.
+ * Major update 09.05.17.
  */
 @SuppressWarnings("WeakerAccess")
 public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHolder>
@@ -34,7 +34,16 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
     private final Object mLock = new Object();
     private List<FilterConsumer<T>> filterConsumer = new ArrayList<>();
     private List<T> mObjects = new ArrayList<>();
-    private List<T> mCopyObjects = new ArrayList<>();//searching
+    /**
+     * The mCopyObjects is used for searching purpose
+     */
+    private List<T> mCopyObjects = new ArrayList<>();
+    private OnItemClickListener mOnItemClickListener;
+
+    /**
+     * The listener that receives notifications when an item is clicked.
+     */
+
 
     @SuppressWarnings("ConstantConditions")
     public BaseRecyclerViewAdapter(@NonNull final List<T> objects) {
@@ -192,7 +201,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
      * @return the item at the specified position or {@code null} when not found
      */
     //@Nullable
-    public T getItem(final int position) {
+    public T getItemAtPosition(final int position) {
         if (position < 0 || position >= mObjects.size()) {
             return null;
         }
@@ -249,6 +258,15 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
             mObjects.add(index, object);
             notifyItemInserted(index);
         }
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull VH holder, int position, @NonNull List<Object> payloads) {
+        super.onBindViewHolder(holder, position, payloads);
+        holder.itemView.setOnClickListener(v -> {
+            if (mOnItemClickListener != null)
+                mOnItemClickListener.onItemClick(holder.getAdapterPosition());
+        });
     }
 
     /**
@@ -416,7 +434,37 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
         }
     }
 
+    /**
+     * Register a callback to be invoked when an item in this AdapterView has
+     * been clicked.
+     *
+     * @param listener The callback that will be invoked.
+     */
+    public void setOnItemClickListener(@Nullable OnItemClickListener listener) {
+        mOnItemClickListener = listener;
+    }
+
+    /**
+     * Interface definition for a callback to be invoked when an item is search
+     */
     public interface FilterConsumer<T> {
-        public String apply(T item);
+        String apply(T item);
+    }
+
+    /**
+     * Interface definition for a callback to be invoked when an item in this
+     * AdapterView has been clicked.
+     */
+    public interface OnItemClickListener {
+        /**
+         * Callback method to be invoked when an item in this AdapterView has
+         * been clicked.
+         * <p>
+         * Implementers can call getItemAtPosition(position) if they need
+         * to access the data associated with the selected item.
+         *
+         * @param position The position of the view in the adapter.
+         */
+        void onItemClick(int position);
     }
 }

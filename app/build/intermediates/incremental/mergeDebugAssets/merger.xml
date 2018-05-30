@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config=":baserecyclerview"><source path="/home/kintan/Desktop/BaseRecyclerView/baserecyclerview/build/intermediates/packagedAssets/debug"/></dataSet><dataSet config="main"><source path="/home/kintan/Desktop/BaseRecyclerView/app/src/main/assets"/><source path="/home/kintan/Desktop/BaseRecyclerView/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/home/kintan/Desktop/BaseRecyclerView/app/src/debug/assets"/></dataSet></merger>

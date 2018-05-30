@@ -40,14 +40,15 @@ public class PictureAdapter extends BaseRecyclerViewAdapter<ImageDetail, Picture
         return null;
     }
 
+    @NonNull
     @Override
-    public VH onCreateViewHolder(ViewGroup parent, int viewType) {
+    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
         return new VH(LayoutInflater.from(mContext).inflate(R.layout.lay_picture_detail, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(VH holder, int position) {
+    public void onBindViewHolder(@NonNull VH holder, int position) {
         holder.bindView(holder.getAdapterPosition());
     }
 
@@ -73,7 +74,7 @@ public class PictureAdapter extends BaseRecyclerViewAdapter<ImageDetail, Picture
 
 
             Glide.with(mContext)
-                    .load(getItem(position).getUrls().getSmall())
+                    .load(getItemAtPosition(position).getUrls().getSmall())
                     .apply(new RequestOptions().centerCrop())
                     .into(new SimpleTarget<Drawable>() {
                         @Override
@@ -100,8 +101,8 @@ public class PictureAdapter extends BaseRecyclerViewAdapter<ImageDetail, Picture
                             });
                         }
                     });
-            tvAuthorName.setText(getItem(position).getUser().getName());
-            tvLikes.setText(String.valueOf(getItem(position).getLikes()).concat(" Likes"));
+            tvAuthorName.setText(getItemAtPosition(position).getUser().getName());
+            tvLikes.setText(String.valueOf(getItemAtPosition(position).getLikes()).concat(" Likes"));
         }
     }
 }

@@ -4,7 +4,7 @@ android {
 
     compileSdkVersion 27
     defaultConfig {
-        applicationId "in.kintanpatel.baserecyclerview"
+        applicationId "com.kintanpatel.baserecyclerview"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1

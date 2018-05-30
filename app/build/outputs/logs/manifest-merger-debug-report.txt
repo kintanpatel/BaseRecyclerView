@@ -1,0 +1,135 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+MERGED from [com.android.support:multidex:1.0.2] /home/kintan/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/a6826d8d5ae1fcd34a59067a36e536cb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/405ccdd75728b56132b0b3fb5b227b37/AndroidManifest.xml:2:1-13:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/22c9a722bdb17a3ad86142a6e38eff07/AndroidManifest.xml:15:1-21:12
+MERGED from [:baserecyclerview] /home/kintan/Desktop/BaseRecyclerView/baserecyclerview/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/376e3dacc5bdfa8c6984efc974cc7728/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/7fd45f9133675ea8dcbe2535d5106324/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/489d084b28fcf6070642e0bd9a1f272f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/ced7e917050bd225ed757a8c0fe5fa00/AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:palette-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/palette-v7-27.1.1.aar/50f7a52bad932637860e2e067563dbbf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f15fe9f4c65ec855a94d4ef154eb50e1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/187d5efcd96d946b188c8ab031ed5467/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/987bbf7c8326b25de10d67d77309749e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a2f7fbd5db6cdce57e913de373198573/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/6d806abdf19ff04640d4e4c2706bdced/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/96f28af1db12123e54367dd6f8064f23/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/51f79de63a46c6214c28cf2b43f3d0c6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/805f586d47940255bad5e4a6fe086514/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d0993c57956353fc698166e2ee06c6d3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e461bb898c8b771aaee7de63883c17dc/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4a6ebddb4eebd14a40f9a8eed58b5b93/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:3:5-47
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:6:5-22:19
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/405ccdd75728b56132b0b3fb5b227b37/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/405ccdd75728b56132b0b3fb5b227b37/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f15fe9f4c65ec855a94d4ef154eb50e1/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f15fe9f4c65ec855a94d4ef154eb50e1/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:9:9-41
+	android:roundIcon
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:10:9-54
+	android:icon
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:8:9-43
+	android:allowBackup
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:12:9-40
+activity#in.kintanpatel.customrecylerview.MainActivity
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:13:9-21:20
+	android:label
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:15:13-35
+	android:name
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:14:13-73
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml:19:27-74
+uses-sdk
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] /home/kintan/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/a6826d8d5ae1fcd34a59067a36e536cb/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /home/kintan/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/a6826d8d5ae1fcd34a59067a36e536cb/AndroidManifest.xml:20:5-43
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/405ccdd75728b56132b0b3fb5b227b37/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/405ccdd75728b56132b0b3fb5b227b37/AndroidManifest.xml:7:5-9:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/22c9a722bdb17a3ad86142a6e38eff07/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/22c9a722bdb17a3ad86142a6e38eff07/AndroidManifest.xml:19:5-43
+MERGED from [:baserecyclerview] /home/kintan/Desktop/BaseRecyclerView/baserecyclerview/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:baserecyclerview] /home/kintan/Desktop/BaseRecyclerView/baserecyclerview/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/376e3dacc5bdfa8c6984efc974cc7728/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/376e3dacc5bdfa8c6984efc974cc7728/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/7fd45f9133675ea8dcbe2535d5106324/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/7fd45f9133675ea8dcbe2535d5106324/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/489d084b28fcf6070642e0bd9a1f272f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/489d084b28fcf6070642e0bd9a1f272f/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/ced7e917050bd225ed757a8c0fe5fa00/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/ced7e917050bd225ed757a8c0fe5fa00/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:palette-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/palette-v7-27.1.1.aar/50f7a52bad932637860e2e067563dbbf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:palette-v7:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/palette-v7-27.1.1.aar/50f7a52bad932637860e2e067563dbbf/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f15fe9f4c65ec855a94d4ef154eb50e1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f15fe9f4c65ec855a94d4ef154eb50e1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/187d5efcd96d946b188c8ab031ed5467/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/187d5efcd96d946b188c8ab031ed5467/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/987bbf7c8326b25de10d67d77309749e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/987bbf7c8326b25de10d67d77309749e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a2f7fbd5db6cdce57e913de373198573/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a2f7fbd5db6cdce57e913de373198573/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/6d806abdf19ff04640d4e4c2706bdced/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/6d806abdf19ff04640d4e4c2706bdced/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/96f28af1db12123e54367dd6f8064f23/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/96f28af1db12123e54367dd6f8064f23/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/51f79de63a46c6214c28cf2b43f3d0c6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/kintan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/51f79de63a46c6214c28cf2b43f3d0c6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/805f586d47940255bad5e4a6fe086514/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/805f586d47940255bad5e4a6fe086514/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d0993c57956353fc698166e2ee06c6d3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d0993c57956353fc698166e2ee06c6d3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e461bb898c8b771aaee7de63883c17dc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e461bb898c8b771aaee7de63883c17dc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4a6ebddb4eebd14a40f9a8eed58b5b93/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/kintan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4a6ebddb4eebd14a40f9a8eed58b5b93/AndroidManifest.xml:20:5-44
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		ADDED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kintan/Desktop/BaseRecyclerView/app/src/main/AndroidManifest.xml

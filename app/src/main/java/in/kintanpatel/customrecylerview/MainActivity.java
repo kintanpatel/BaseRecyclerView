@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -65,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.setFilterConsumer((BaseRecyclerViewAdapter.FilterConsumer<ImageDetail>) (ImageDetail imageDetail) -> {
             return imageDetail.getUser().getName();
+        });
+        adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(getApplicationContext(),adapter.getItemAtPosition(position).getUser().getName(),Toast.LENGTH_SHORT).show();
+            }
         });
         getData();
     }

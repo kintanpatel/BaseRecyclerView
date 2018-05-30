@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BaseRecyclerView.iml" filepath="$PROJECT_DIR$/BaseRecyclerView.iml" />
       <module fileurl="file://$PROJECT_DIR$/CustomRecylerView.iml" filepath="$PROJECT_DIR$/CustomRecylerView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baserecyclerview/baserecyclerview.iml" filepath="$PROJECT_DIR$/baserecyclerview/baserecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/baserecyclerview/baserecyclerview.iml" filepath="$PROJECT_DIR$/baserecyclerview/baserecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/baserecyclerview/recyclerviewadapter.iml" filepath="$PROJECT_DIR$/baserecyclerview/recyclerviewadapter.iml" />
     </modules>
