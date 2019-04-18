@@ -1,19 +1,23 @@
 #Internal package file, do not edit.
-#Wed May 30 16:14:49 IST 2018
-1.base=/home/kintan/Desktop/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/11
-2.path=classes.dex
-0.baseType=DIRECTORY
-3.baseType=DIRECTORY
-2.base=/home/kintan/Desktop/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/13
-3.set=DEX
-2.set=DEX
-1.baseType=DIRECTORY
-3.path=classes.dex
-count=4
-1.set=DEX
+#Thu Apr 18 12:50:29 IST 2019
+2.base=/media/kintan/workspace/Code/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/0
 0.path=classes.dex
-3.base=/home/kintan/Desktop/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/12
-0.set=DEX
-0.base=/home/kintan/Desktop/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/14
 2.baseType=DIRECTORY
+3.base=/media/kintan/workspace/Code/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/2
+2.set=DEX
 1.path=classes.dex
+4.base=/media/kintan/workspace/Code/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/1
+count=5
+2.path=classes.dex
+4.set=DEX
+3.path=classes.dex
+3.baseType=DIRECTORY
+1.set=DEX
+4.path=classes.dex
+1.baseType=DIRECTORY
+0.base=/media/kintan/workspace/Code/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/4
+0.baseType=DIRECTORY
+3.set=DEX
+1.base=/media/kintan/workspace/Code/BaseRecyclerView/app/build/intermediates/transforms/dexMerger/debug/3
+4.baseType=DIRECTORY
+0.set=DEX

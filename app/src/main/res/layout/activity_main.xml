@@ -7,8 +7,10 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 
+
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tool_bar"
+        android:id="@+id/toolbar"
         style="@style/SearchViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,10 +18,10 @@
         app:titleTextColor="@android:color/white" />
 
     <in.kintanpatel.baserecyclerview.BaseRecyclerView
-        android:id="@+id/rv_picture"
+        android:id="@+id/rvPicture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tool_bar"
+        android:layout_below="@+id/toolbar"
         app:emptyViewId="@id/empty_view" />
 
     <LinearLayout
@@ -39,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="No Records"
+            android:text="@string/no_records"
             android:textColor="#938a8a"
             android:textSize="20sp" />
     </LinearLayout>

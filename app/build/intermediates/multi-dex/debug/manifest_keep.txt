@@ -1,3 +1,0 @@
-# Referenced at /home/kintan/Desktop/BaseRecyclerView/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:13
--keep class android.support.multidex.MultiDexApplication { <init>(...); }
-
