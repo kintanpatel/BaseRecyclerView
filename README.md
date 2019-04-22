@@ -74,6 +74,8 @@ fun setFilterConsumer(vararg filterConsumer: FilterConsumer<T>)
     </LinearLayout>
  ```
   **Create Adapter and Extend With BaseRecyclerAdapter**
+  
+  *Where **ImageDetail** is model class*
   ```
   class PictureAdapter(private var mContext: Context) : BaseRecyclerAdapter<ImageDetail>() {
 
